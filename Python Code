@@ -1,0 +1,21 @@
+secret_guess = 30
+number_of_guess = 1
+print("Welcome to the Number Guessing Game!")
+print("You need to try and guess the number between 1 and 100...")
+print("If you wish to exit the game enter 0...")
+guess = int(input("Please enter a guess: "))
+while guess != 0:
+    while guess != secret_guess:
+        number_of_guess += 1
+        if guess > secret_guess:
+            print("That is not correct, please try again LOWER.")
+            guess = int(input("Please enter a guess: "))
+        elif guess < secret_guess:
+            print("That is not correct,please try again HIGHER.")
+            guess = int(input("Please enter a guess: "))
+    else:
+       print(f"Well done the correct answer is {secret_guess}")
+       print(f"Your number of guesses where {number_of_guess}")
+    break
+else:
+    print("Thank you for playing")
